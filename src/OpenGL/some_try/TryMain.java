@@ -1,4 +1,4 @@
-package OpenGL.essai;
+package OpenGL.some_try;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;

@@ -1,4 +1,4 @@
-package OpenGL.essai;
+package OpenGL.some_try;
 
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.*;
