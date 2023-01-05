@@ -1,4 +1,4 @@
-package javaa.SpaceInvaderFolder;
+package javaa.Projet_SpaceInvader;
 
 import com.jogamp.opengl.*;
 import java.util.ArrayList;

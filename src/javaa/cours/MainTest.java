@@ -1,4 +1,4 @@
-package javaa;
+package javaa.cours;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;

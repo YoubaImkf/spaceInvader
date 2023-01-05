@@ -1,4 +1,4 @@
-package javaa.SpaceInvaderFolder;
+package javaa.Projet_SpaceInvader;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.util.gl2.GLUT;
