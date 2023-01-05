@@ -2,6 +2,8 @@
 
 Projet OpenGL - java jdk 11
 
+je n'est pas reelement compris les coordonnées orthonormales --' 
+
 ## Command
 
 ➡= RIGHT
