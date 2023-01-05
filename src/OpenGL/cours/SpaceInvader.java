@@ -1,4 +1,4 @@
-package javaa.cours;
+package OpenGL.cours;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

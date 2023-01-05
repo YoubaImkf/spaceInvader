@@ -1,11 +1,10 @@
-package javaa.essai;
+package OpenGL.essai;
 
 import java.awt.event.KeyListener;
 
 import com.jogamp.newt.event.KeyEvent;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.GLCanvas;
-import com.jogamp.opengl.glu.GLU;
 import com.jogamp.opengl.util.FPSAnimator;
 
 import javax.swing.*;

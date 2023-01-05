@@ -1,4 +1,4 @@
-package javaa.essai;
+package OpenGL.essai;
 
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.*;

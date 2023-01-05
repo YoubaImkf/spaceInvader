@@ -1,11 +1,11 @@
-package javaa.essai;
+package OpenGL.cours;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.gl2.GLUT;
+import com.jogamp.opengl.util.FPSAnimator;
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.TextureIO;
 
@@ -14,13 +14,13 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-public class TryMain extends GLCanvas implements GLEventListener {
+public class textureMain extends GLCanvas implements GLEventListener {
 
     private float xrot, yrot, zrot; // variables for the rotations
-    int spaceshipX = 200, spaceshipY = 70;
+
     private int texture;
 
-    public TryMain() {
+    public textureMain() {
         this.addGLEventListener(this);
     }
 
@@ -39,7 +39,7 @@ public class TryMain extends GLCanvas implements GLEventListener {
 
         try {
             // 1. lire une image et l'assigner à une texture
-            File im = new File("src/res/InvaderShip.png");
+            File im = new File("src/res/Glass_Texture_25.jpg");
             Texture t = TextureIO.newTexture(im, true);
             texture = t.getTextureObject(gl);
 
@@ -80,46 +80,6 @@ public class TryMain extends GLCanvas implements GLEventListener {
         gl.glBindTexture(GL2.GL_TEXTURE_2D, texture);
 
         gl.glBegin(GL2.GL_QUADS);
-        gl.glColor3f(1.0f, 1.0f, 1.0f);
-        gl.glVertex3d(-1, -1, 1);
-        gl.glVertex3d(1, -1, 1);
-        gl.glVertex3d(1, 1, 1);
-        gl.glVertex3d(-1, 1, 1);
-        gl.glEnd();
-
-//        drawCube3d(gl);
-//        drawCube(gl);
-
-        gl.glFlush();
-        xrot += .3f;
-        yrot += .2f;
-        zrot += .4f;
-
-
-    }
-
-    private void drawSpaceShip(GL2 gl) {
-        GLU glu = new GLU();
-        GLUT glut = new GLUT();
-
-        // dessin du corps du vaisseau
-        gl.glBegin(GL2.GL_TRIANGLES);
-        gl.glVertex3f(-0.5f, -0.5f, 0.0f);
-        gl.glVertex3f(0.5f, 0.0f, 0.0f);
-        gl.glVertex3f(-0.5f, 0.5f, 0.0f);
-        gl.glEnd();
-
-        // dessin de la fusée arrière du vaisseau
-        gl.glPushMatrix();
-        gl.glTranslatef(-0.5f, 0.0f, 0.0f);
-        gl.glRotatef(180.0f, 0.0f, 0.0f, 1.0f);
-        glut.glutSolidCone(0.1f, 0.5f, 20, 20);
-        gl.glPopMatrix();
-    }
-
-
-    public void drawCube3d(GL2 gl){
-        gl.glBegin(GL2.GL_QUADS);
         // Front Face
         gl.glTexCoord2f(0.0f, 0.0f); gl.glVertex3f(-1.0f, -1.0f,  1.0f);
         gl.glTexCoord2f(1.0f, 0.0f); gl.glVertex3f( 1.0f, -1.0f,  1.0f);
@@ -151,13 +111,19 @@ public class TryMain extends GLCanvas implements GLEventListener {
         gl.glTexCoord2f(1.0f, 1.0f); gl.glVertex3f(-1.0f,  1.0f,  1.0f);
         gl.glTexCoord2f(0.0f, 1.0f); gl.glVertex3f(-1.0f,  1.0f, -1.0f);
         gl.glEnd();
+
+        gl.glFlush();
+        xrot += .2f;
+        yrot += .2f;
+        zrot += .3f;
+
+
     }
 
     public void drawCube(GL2 gl) {
         gl.glBegin(GL2.GL_QUADS);
         // Front
-        // red , green , blue
-        gl.glColor3d(0, 0, 1);
+        gl.glColor3d(0.184314, 0.184314, 0.309804);
         gl.glVertex3d(-1, -1, 1);
         gl.glVertex3d(1, -1, 1);
         gl.glVertex3d(1, 1, 1);
@@ -217,11 +183,11 @@ public class TryMain extends GLCanvas implements GLEventListener {
     }
 
     public static void main(String[] args) {
-        GLCanvas canvas = new TryMain();
+        GLCanvas canvas = new textureMain();
         canvas.setPreferredSize(new Dimension(800, 600));
 
         // add animator to set the frame rate
-//        final FPSAnimator animator = new FPSAnimator(canvas, 300,true );
+        final FPSAnimator animator = new FPSAnimator(canvas, 300,true );
 
         final JFrame frame = new JFrame();
         frame.getContentPane().add(canvas);
@@ -231,6 +197,6 @@ public class TryMain extends GLCanvas implements GLEventListener {
         frame.setLocationRelativeTo(null); // center window
         frame.setVisible(true);
 
-//        animator.start();
+        animator.start();
     }
 }
