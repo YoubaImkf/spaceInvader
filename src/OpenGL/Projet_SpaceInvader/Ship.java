@@ -19,7 +19,6 @@ public class Ship {
 
         public void moveLeft() {
             x -= speed;
-            // Limitation de la position en x du vaisseau à l'intérieur de la fenêtre
             if (x < -4.8f) { // car on utilise des coordonnées orthonormales dans main
                 x = -4.8f;
             }
@@ -27,7 +26,6 @@ public class Ship {
 
         public void moveRight() {
             x += speed;
-            // Limitation de la position en x du vaisseau à l'intérieur de la fenêtre
             if (x > 4.8f) {
                 x = 4.8f;
             }

@@ -40,7 +40,6 @@ public class Main extends JFrame implements GLEventListener, KeyListener {
 
     }
 
-    // Fonction appelée lors de l'initialisation du contexte OpenGL
     public void init(GLAutoDrawable glAutoDrawable) {
         GL2 gl = glAutoDrawable.getGL().getGL2();
         gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -86,7 +85,6 @@ public class Main extends JFrame implements GLEventListener, KeyListener {
         ship.update();
         ship.draw(gl);
 
-        // Mise à jour et dessin des monstres
         for (int i=0; i<monsters.size(); i++) {
             Monster monster = monsters.get(i);
             monster.update();
@@ -123,17 +121,14 @@ public class Main extends JFrame implements GLEventListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT:
-                // Déplacement du vaisseau vers la gauche
                 ship.moveLeft();
                 break;
 
             case KeyEvent.VK_RIGHT:
-                // Déplacement du vaisseau vers la droite
                 ship.moveRight();
                 break;
 
             case KeyEvent.VK_SPACE:
-                // Tir d'un projectile
                 ship.shoot();
                 break;
         }
